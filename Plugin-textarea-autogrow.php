@@ -13,9 +13,9 @@ if ( ! defined( 'WPINC' ) ) {
         die;
 }
 
-Comment_Autogrow::init();
+arcd_autogrow::init();
 
-class Comment_Autogrow {
+class arcd_autogrow {
 
 	private static $needed;
 
@@ -32,7 +32,7 @@ class Comment_Autogrow {
 		if ( ! self::$needed )
 			return;
 
-		wp_enqueue_script( 'growfield', plugins_url( 'growfield.js', __FILE__ ), array( 'jquery' ), '2', true );
+		wp_enqueue_script( 'autosize', plugins_url( 'jquery.autosize.min.js', __FILE__ ), array( 'jquery' ), '2', true );
 	}
 
 	function init_script() {
@@ -41,7 +41,7 @@ class Comment_Autogrow {
 
 ?>
 <script type="text/javascript">
-jQuery(document).ready(function($){ $('#comment').growfield(); });
+jQuery(document).ready(function($){ $('#comment').autosize(); });
 </script>
 <?php
 	}
